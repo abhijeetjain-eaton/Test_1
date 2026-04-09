@@ -30,6 +30,9 @@ std::string TextFileReader::readAll()
 
     std::ostringstream oss;
     oss << stream_.rdbuf();
+    if (stream_.bad()) {
+        throw std::runtime_error("I/O error while reading file: " + filePath_.string());
+    }
     return oss.str();
 }
 
@@ -37,4 +40,7 @@ void TextFileReader::resetStream()
 {
     stream_.clear();
     stream_.seekg(0, std::ios::beg);
+    if (stream_.fail()) {
+        throw std::runtime_error("Failed to seek to beginning of file: " + filePath_.string());
+    }
 }
