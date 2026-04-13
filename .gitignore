@@ -1,2 +1,19 @@
 # Build output
 build/
+out/
+
+# IDE / editor files
+.vs/
+.vscode/
+*.suo
+*.user
+*.sln
+*.vcxproj*
+CMakeSettings.json
+.idea/
+*.swp
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
