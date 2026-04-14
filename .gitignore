@@ -9,6 +9,7 @@ out/
 *.sln
 *.vcxproj*
 CMakeSettings.json
+CMakeUserPresets.json
 .idea/
 *.swp
 *~

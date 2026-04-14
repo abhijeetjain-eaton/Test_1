@@ -2,10 +2,10 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Debug file_reader (GDB)",
+            "name": "Debug with CMake Tools",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/build/file_reader",
+            "program": "${command:cmake.launchTargetPath}",
             "args": [
                 "${workspaceFolder}/data/sample.txt"
             ],
@@ -21,14 +21,46 @@
                     "ignoreFailures": true
                 }
             ],
-            "preLaunchTask": "CMake Build (Debug)",
+            "linux": {
+                "MIMode": "gdb",
+                "miDebuggerPath": "/usr/bin/gdb"
+            },
+            "osx": {
+                "MIMode": "lldb"
+            },
+            "windows": {
+                "type": "cppvsdbg",
+                "console": "integratedTerminal"
+            }
+        },
+        {
+            "name": "Debug file_reader (GDB – Linux)",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/out/build/linux-debug/file_reader",
+            "args": [
+                "${workspaceFolder}/data/sample.txt"
+            ],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for GDB",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "CMake Preset Build (linux-debug)",
             "miDebuggerPath": "/usr/bin/gdb"
         },
         {
             "name": "Debug file_reader (LLDB – macOS)",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/build/file_reader",
+            "program": "${workspaceFolder}/out/build/macos-debug/file_reader",
             "args": [
                 "${workspaceFolder}/data/sample.txt"
             ],
@@ -37,13 +69,13 @@
             "environment": [],
             "externalConsole": false,
             "MIMode": "lldb",
-            "preLaunchTask": "CMake Build (Debug)"
+            "preLaunchTask": "CMake Preset Build (macos-debug)"
         },
         {
             "name": "Debug file_reader (MSVC – Windows)",
             "type": "cppvsdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/build/Debug/file_reader.exe",
+            "program": "${workspaceFolder}/out/build/windows-debug/file_reader.exe",
             "args": [
                 "${workspaceFolder}/data/sample.txt"
             ],
@@ -51,7 +83,7 @@
             "cwd": "${workspaceFolder}",
             "environment": [],
             "console": "integratedTerminal",
-            "preLaunchTask": "CMake Build (Debug)"
+            "preLaunchTask": "CMake Preset Build (windows-debug)"
         }
     ]
 }
