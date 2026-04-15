@@ -3,7 +3,8 @@ build/
 out/
 
 # IDE / editor files
-.vs/
+.vs/*
+!.vs/launch.vs.json
 *.suo
 *.user
 *.sln

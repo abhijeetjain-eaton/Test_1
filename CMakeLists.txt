@@ -30,3 +30,9 @@ if(CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
 elseif(MSVC)
     target_compile_options(file_reader PRIVATE /W4)
 endif()
+
+# ---- Visual Studio debugger settings ----
+set_target_properties(file_reader PROPERTIES
+    VS_DEBUGGER_COMMAND_ARGUMENTS "${CMAKE_SOURCE_DIR}/data/sample.txt"
+    VS_DEBUGGER_WORKING_DIRECTORY "${CMAKE_SOURCE_DIR}"
+)

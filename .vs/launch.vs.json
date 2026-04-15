@@ -1,0 +1,15 @@
+{
+    "version": "0.2.1",
+    "configurations": [
+        {
+            "type": "default",
+            "project": "CMakeLists.txt",
+            "projectTarget": "file_reader.exe",
+            "name": "Debug file_reader",
+            "args": [
+                "data\\sample.txt"
+            ],
+            "currentDir": "${workspaceRoot}"
+        }
+    ]
+}
