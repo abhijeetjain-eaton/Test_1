@@ -1,0 +1,5 @@
+Hello, World!
+This is a sample text file.
+It is used to demonstrate the modular C++20 file reader.
+Each line will be counted by the LineCountProcessor.
+Each word will be counted by the WordCountProcessor.

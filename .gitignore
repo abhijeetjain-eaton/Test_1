@@ -1,0 +1,20 @@
+# Build output
+build/
+out/
+
+# IDE / editor files
+.vs/*
+!.vs/launch.vs.json
+*.suo
+*.user
+*.sln
+*.vcxproj*
+CMakeSettings.json
+CMakeUserPresets.json
+.idea/
+*.swp
+*~
+
+# OS files
+.DS_Store
+Thumbs.db

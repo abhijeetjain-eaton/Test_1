@@ -1,0 +1,117 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "CMake Preset Build (linux-debug)",
+            "type": "shell",
+            "command": "cmake",
+            "args": [
+                "--build",
+                "--preset",
+                "linux-debug"
+            ],
+            "group": "build",
+            "dependsOn": "CMake Preset Configure (linux-debug)",
+            "problemMatcher": [
+                "$gcc"
+            ]
+        },
+        {
+            "label": "CMake Preset Configure (linux-debug)",
+            "type": "shell",
+            "command": "cmake",
+            "args": [
+                "--preset",
+                "linux-debug"
+            ],
+            "group": "build",
+            "problemMatcher": []
+        },
+        {
+            "label": "CMake Preset Build (macos-debug)",
+            "type": "shell",
+            "command": "cmake",
+            "args": [
+                "--build",
+                "--preset",
+                "macos-debug"
+            ],
+            "group": "build",
+            "dependsOn": "CMake Preset Configure (macos-debug)",
+            "problemMatcher": [
+                "$gcc"
+            ]
+        },
+        {
+            "label": "CMake Preset Configure (macos-debug)",
+            "type": "shell",
+            "command": "cmake",
+            "args": [
+                "--preset",
+                "macos-debug"
+            ],
+            "group": "build",
+            "problemMatcher": []
+        },
+        {
+            "label": "CMake Preset Build (windows-debug)",
+            "type": "shell",
+            "command": "cmake",
+            "args": [
+                "--build",
+                "--preset",
+                "windows-debug"
+            ],
+            "group": "build",
+            "dependsOn": "CMake Preset Configure (windows-debug)",
+            "problemMatcher": [
+                "$msCompile"
+            ]
+        },
+        {
+            "label": "CMake Preset Configure (windows-debug)",
+            "type": "shell",
+            "command": "cmake",
+            "args": [
+                "--preset",
+                "windows-debug"
+            ],
+            "group": "build",
+            "problemMatcher": []
+        },
+        {
+            "label": "CMake Preset Build (Default Debug)",
+            "type": "shell",
+            "command": "cmake",
+            "args": [
+                "--build",
+                "${workspaceFolder}/build",
+                "--config",
+                "Debug"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "dependsOn": "CMake Preset Configure (Default Debug)",
+            "problemMatcher": [
+                "$gcc",
+                "$msCompile"
+            ]
+        },
+        {
+            "label": "CMake Preset Configure (Default Debug)",
+            "type": "shell",
+            "command": "cmake",
+            "args": [
+                "-B",
+                "${workspaceFolder}/build",
+                "-DCMAKE_BUILD_TYPE=Debug",
+                "-S",
+                "${workspaceFolder}"
+            ],
+            "group": "build",
+            "problemMatcher": []
+        }
+    ]
+}
